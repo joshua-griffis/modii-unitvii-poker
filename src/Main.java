@@ -213,21 +213,23 @@ public class Main {
                 System.out.println("YOU LOSE!!");
                 System.out.println("Balance: $" + poker.balance);
             }
-            System.out.println("Play again? [yes] [no]");
-            String userInputX = scan.nextLine();
-            if (userInputX.equals("no")) {
-                System.out.println("THANKS FOR PLAYING!!! <3 <3 <3 " + poker.heart + " " + poker.heart + " " + poker.heart);
-                break;
-            } else if (userInputX.equals("yes")) {
-                poker.rounds++;
-                System.out.println("Round: " + poker.rounds);
-                poker.hand.clear();
-                poker.flop.clear();
-                poker.player2Hand.clear();
-                poker.fold = false;
-
-            } else {
-                System.out.println(";p");
+            while (true) {
+                System.out.println("Play again? [yes] [no]");
+                String userInputX = scan.nextLine();
+                if (userInputX.equals("no")) {
+                    System.out.println("THANKS FOR PLAYING!!! <3 <3 <3 " + poker.heart + " " + poker.heart + " " + poker.heart);
+                    break;
+                } else if (userInputX.equals("yes")) {
+                    poker.rounds++;
+                    System.out.println("Round: " + poker.rounds);
+                    poker.hand.clear();
+                    poker.flop.clear();
+                    poker.player2Hand.clear();
+                    poker.fold = false;
+                    break;
+                } else {
+                    System.out.println(";p");
+                }
             }
         }
     }
